@@ -472,9 +472,9 @@
         }
         recalcColWidths()
 
-        table.style['table-layout'] = 'fixed'
+        // table.style['table-layout'] = 'fixed'
         table.style['border-spacing'] = '0'
-        table.style.width = '1px'
+        // table.style.width = '1px'
       }
 
       function setup() {
@@ -679,7 +679,7 @@
 
   ko.components.register('frypan', {
     template: '<div class="frypan-scroll-area">\
-<table>\
+<table class="table">\
   <colgroup data-bind="foreach: $component.columns"><col data-bind="style: { width: $data.width() && $data.width() + \'px\' }"></col></colgroup>\
   <thead data-bind="style: { width: $component.width() + \'px\' }"><tr data-bind="foreach: $component.columns"><th data-bind="css: $component.headerClassFor($data, $index()), animation: { when: $component.showFilters() === $index(), class: \'frypan-filter-open\', enter: \'frypan-filter-opening\', exit: \'frypan-filter-closing\' }, attr: { \'aria-sort\': $component.ariaSortForCol($data) }, style: { width: $data.width() && $data.width() + \'px\' }, frypanReorder: $component.reorder">\
       <a href="" class="frypan-sort-toggle" data-bind="text: name, click: $component.toggleSort.bind($component)"></a>\
